@@ -6,20 +6,18 @@
     align-items: center;
     align-content: center;
     align-self: center;
-
 }
 
 .textarea {
-    box-sizing: border-box;
-
     width: 976px;
     height: 40px;
-    margin: 301px 0px 32px 70px;
+    margin: 26px 0px 32px 70px;
     flex-shrink: 0;
     border-radius: 20px;
+    border: none;
     background: #F5F7FB;
     box-shadow: 0px 1px 2px 0px rgba(29, 33, 38, 0.10), 0px 5px 20px 0px rgba(29, 33, 38, 0.03);
-
+    padding: 12px 839px 11px 24px;
     color: rgba(0, 0, 0, 0.60);
     font-family: Montserrat;
     font-size: 14px;
@@ -27,18 +25,23 @@
     font-weight: 400;
     line-height: normal;
     opacity: 0.9;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 0;
+    height: 40px;
 }
 
 .button {
     box-sizing: border-box;
-    margin: 301px 70px 32px 44px;
+    margin: 26px 70px 32px 44px;
     width: 120px;
     height: 40px;
-
     flex-shrink: 0;
     border-radius: 20px;
+    border: none;
     background: #06C;
-
     color: #FFF;
     font-family: Montserrat;
     font-size: 16px;
@@ -48,9 +51,9 @@
 }
 
 .button:hover {
-
+    background: #2b7bd4;
 }
 
 .button:active {
-
+    background: #068014;
 }
