@@ -39,21 +39,21 @@
     flex-direction: column;
     margin: auto;
     width: 1280px;
-    height: 554px;
-    padding: 37px 0 216px 0;
+    padding: 37px 0 37px 0;
     justify-content: center;
     align-items: center;
     background: #ffffff;
 }
 
 .hw2 {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     width: 1280px;
+    min-height: 336px;
     padding: 24px 0 24px 70px;
     border-top: 1px solid #D9D9D9;
     border-bottom: 1px solid #D9D9D9;
-
 }
 
 .hw2Title{
