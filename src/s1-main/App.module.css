@@ -1,5 +1,7 @@
 .App {
     --header_height: 60px;
+    width: 1280px;
+    margin: auto;
 }
 
 .hw1Wrapper {
@@ -100,4 +102,30 @@
     padding: 24px 0 24px 70px;
     border-top: 1px solid #D9D9D9;
     border-bottom: 1px solid #D9D9D9;
+}
+
+
+/*--------------------------         HW4      ----------------------------------*/
+.hwTitle {
+    display: flex;
+    align-items: flex-end;
+    width: 165px;
+    height: 27px;
+    margin: 0 1045px 0 70px;
+    color: #000;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.hw {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 1280px;
+    padding: 9px 0 37px 0;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
 }
