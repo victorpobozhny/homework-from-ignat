@@ -5,13 +5,12 @@
     height: 77px;
     flex-shrink: 0;
     margin-bottom: 47px;
-    margin-left: 70px;
+
 }
 
 .friendImageAndText {
     display: flex;
     flex-direction: row;
-
     height: 60px;
     flex-shrink: 0;
 }

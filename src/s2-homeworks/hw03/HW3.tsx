@@ -38,11 +38,11 @@ const HW3 = () => {
     }
 
     return (
-        <div id={'hw3'} className={s2.hw3Wrapper}>
-            <div className={s2.hw3Title}>Homework #3</div>
+        <div id={'hw3'} >
+            <div className={s2.hwTitle}>Homework #3</div>
             {/*для автоматической проверки дз (не менять)*/}
 
-            <div className={s2.hw3}>
+            <div className={s2.hw}>
                 <GreetingContainer
                     users={users}
                     addUserCallback={addUserCallback}

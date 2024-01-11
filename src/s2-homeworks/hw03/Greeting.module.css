@@ -1,6 +1,5 @@
 .greetingForm {
     display: flex;
-    margin-top: 57px;
     flex-direction: column;
     font-family: Montserrat, inherit;
 }
