@@ -1,6 +1,6 @@
 .button {
     display: inline-flex;
-    width: 116px;
+    width: 133px;
     height: 30px;
     padding: 5px 24px;
     justify-content: center;
@@ -29,7 +29,7 @@
     border: 1px solid #06C;
     background-color: #fff;
     color: #06C;
-    width: 129px;
+    width: 133px;
 }
 
 .button.red {
@@ -41,7 +41,7 @@
 }
 
 .red:hover {
-    width: 167px;
+    width: 133px;
     background: #FF1A47;
 }
 
@@ -51,7 +51,7 @@
 
 
 .default:active {
-    width: 116px;
+    width: 133px;
     background: #0059B2;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .red:active {
-    width: 149px;
+    width: 133px;
     background: #B21232;
 }
 
