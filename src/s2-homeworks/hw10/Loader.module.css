@@ -1,3 +1,67 @@
+/*.loader {*/
+/*    width: 108px;*/
+/*    height: 108px;*/
+/*    position: relative;*/
+/*    left: 9px;*/
+/*    right: 9px;*/
+/*    top: 9px;*/
+/*    bottom: 9px;*/
+/*   text-align: center;*/
+/*}*/
+
+/*@keyframes rotation {*/
+/*    0% {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+/*    25% {*/
+/*        transform: rotate(90deg);*/
+/*    }*/
+/*    50% {*/
+/*        transform: rotate(180deg);*/
+/*    }*/
+/*    75% {*/
+/*        transform: rotate(270deg);*/
+/*    }*/
+/*    100% {*/
+/*        transform: rotate(360deg);*/
+/*    }*/
+/*}*/
+
+/*.innerLoader {*/
+
+/*    !*background: conic-gradient(from 180deg at 50% 50%, rgba(255, 255, 255, 0), rgb(81, 45, 228));*!*/
+/*    background-image:*/
+/*            url(Loading.svg);*/
+/*    text-align: center;*/
+/*    width: 110px;*/
+/*    height: 110px;*/
+/*    animation-name: rotation;*/
+/*    animation-duration: 300ms;*/
+/*    animation-timing-function: linear;*/
+/*    animation-iteration-count: infinite;*/
+/*}*/
+
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
 .loader {
-    /*свг и/или анимация*/
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.loader:before , .loader:after{
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.loader:after {
+    box-shadow: 0 2px 0 #FF3D00 inset;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    0% {  transform: rotate(0)}
+    100% { transform: rotate(360deg)}
 }
