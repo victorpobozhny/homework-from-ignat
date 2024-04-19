@@ -12,7 +12,6 @@ import SuperSort from './common/c10-SuperSort/SuperSort'
 * 3 - проверить pureChange тестами
 * 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15
 * 4 - сделать стили в соответствии с дизайном
-* 5 - добавить HW15 в HW5/pages/JuniorPlus
 * */
 
 type TechType = {
@@ -43,7 +42,7 @@ const HW15 = () => {
     const [page, setPage] = useState(1)
     const [count, setCount] = useState(4)
     const [idLoading, setLoading] = useState(false)
-    const [totalCount, setTotalCount] = useState(100)
+    const [totalCount, setTotalCount] = useState(0)
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
@@ -51,20 +50,20 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
-                // делает студент
-
-                // сохранить пришедшие данные
-
-                //
+                if (res) {
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
+                    setLoading(false)
+                }
             })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
+        setPage(newPage)
+        setCount(newCount)
         // делает студент
-
-        // setPage(
-        // setCount(
-
+        setSearchParams(sort);
+        sendQuery({sort, page: newPage, count: newCount });
         // sendQuery(
         // setSearchParams(
 
@@ -73,10 +72,13 @@ const HW15 = () => {
 
     const onChangeSort = (newSort: string) => {
         // делает студент
-
+        setSort(newSort)
+        setPage(1)
         // setSort(
         // setPage(1) // при сортировке сбрасывать на 1 страницу
 
+        sendQuery({sort: newSort, page: 1, count: count})
+        setSearchParams(newSort)
         // sendQuery(
         // setSearchParams(
 
@@ -101,35 +103,39 @@ const HW15 = () => {
             </div>
         </div>
     ))
+    
+    const opacity = idLoading? '0.3': ''
 
     return (
         <div id={'hw15'}>
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                {idLoading && <div id={'hw15-loading'} className={s.loading}></div>}
 
-                <SuperPagination
-                    page={page}
-                    itemsCountForPage={count}
-                    totalCount={totalCount}
-                    onChange={onChangePagination}
-                />
+                <div style={{opacity: opacity}}>
+                    <SuperPagination
+                        page={page}
+                        itemsCountForPage={count}
+                        totalCount={totalCount}
+                        onChange={onChangePagination}
+                    />
 
-                <div className={s.rowHeader}>
-                    <div className={s.techHeader}>
-                        tech
-                        <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
+                    <div className={s.rowHeader}>
+                        <div className={s.techHeader}>
+                            tech
+                            <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
+                        </div>
+
+                        <div className={s.developerHeader}>
+                            developer
+                            <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
+                        </div>
                     </div>
 
-                    <div className={s.developerHeader}>
-                        developer
-                        <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
-                    </div>
-                </div>
-
-                {mappedTechs}
+                    {mappedTechs}
             </div>
+        </div>
         </div>
     )
 }
